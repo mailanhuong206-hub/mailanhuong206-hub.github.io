@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Work for Chinese</title>
+  <meta name="description" content="Learn practical Chinese for your field.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      line-height: 1.8;
+    }
+    .word {
+      position: relative;
+      color: #d32f2f;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .word::after {
+      content: attr(data-meaning) " (" attr(data-pinyin) ")";
+      position: absolute;
+      bottom: 120%;
+      left: 0;
+      background: #333;
+      color: #fff;
+      padding: 4px 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: 0.2s;
+    }
+    .word:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📘 Learn Practical Chinese</h1>
+
+<p>
+  我想
+  <span class="word" data-meaning="học tập" data-pinyin="xué xí">学习</span>
+  中文
+</p>
+
+</body>
+</html>
