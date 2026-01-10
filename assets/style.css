@@ -111,3 +111,29 @@ h1{
     </div>
   </div>
 </body>
+/* Center hero + pop-up animation */
+.hero{
+  text-align: center;
+  padding: 54px 16px 10px;
+}
+
+.hero-title{
+  margin: 0;
+  font-size: 54px;
+  letter-spacing: .2px;
+  animation: popIn .6s ease-out both;
+}
+
+.hero-sub{
+  margin: 10px 0 0;
+  font-size: 18px;
+  color: var(--muted);
+  animation: popIn .7s ease-out both;
+  animation-delay: .08s;
+}
+
+@keyframes popIn{
+  0%   { opacity: 0; transform: translateY(14px) scale(.97); }
+  70%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
