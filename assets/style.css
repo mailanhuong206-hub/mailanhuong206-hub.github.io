@@ -133,6 +133,34 @@ h1{
 }
 
 @keyframes popIn{
+  /* FORCE center hero */
+.hero{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center !important;
+  padding: 56px 16px 14px !important;
+}
+
+.hero-title{
+  width: 100%;
+  text-align: center !important;
+  margin: 0 !important;
+  font-size: 54px;
+  animation: popIn .6s ease-out both;
+}
+
+.hero-sub{
+  width: 100%;
+  text-align: center !important;
+  margin: 10px 0 0 !important;
+  font-size: 18px;
+  color: var(--muted);
+  animation: popIn .7s ease-out both;
+  animation-delay: .08s;
+}
+
   0%   { opacity: 0; transform: translateY(14px) scale(.97); }
   70%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
