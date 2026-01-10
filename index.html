@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Work for Chinese</title>
-  <meta name="description" content="Learn practical Chinese for your field.">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      line-height: 1.8;
-    }
-    .word {
-      position: relative;
-      color: #d32f2f;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .word::after {
-      content: attr(data-meaning) " (" attr(data-pinyin) ")";
-      position: absolute;
-      bottom: 120%;
-      left: 0;
-      background: #333;
-      color: #fff;
-      padding: 4px 6px;
-      font-size: 12px;
-      white-space: nowrap;
-      opacity: 0;
-      transition: 0.2s;
-    }
-    .word:hover::after {
-      opacity: 1;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<h1>📘 Learn Practical Chinese</h1>
+<h1 style="text-align:center;margin-top:30px;">
+  Work for Chinese
+</h1>
 
-<p>
-  我想
-  <span class="word" data-meaning="học tập" data-pinyin="xué xí">学习</span>
-  中文
+<p style="text-align:center;">
+  Chọn lĩnh vực để học tiếng Trung theo công việc
 </p>
+
+<div class="topics">
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?1">
+    <h3>电子商务 (E-commerce)</h3>
+  </a>
+
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?2">
+    <h3>物流 (Logistics)</h3>
+  </a>
+
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?3">
+    <h3>市场营销 (Marketing)</h3>
+  </a>
+
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?4">
+    <h3>客户服务 (Customer Service)</h3>
+  </a>
+
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?5">
+    <h3>金融 (Finance)</h3>
+  </a>
+
+  <a class="card" href="#">
+    <img src="https://picsum.photos/400/250?6">
+    <h3>人力资源 (HR)</h3>
+  </a>
+</div>
 
 </body>
 </html>
