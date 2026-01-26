@@ -1,68 +1,417 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Work for Chinese</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Industry-specific Chinese for working professionals." />
+  <title>ChineseForWork — Learn Chinese for Your Career</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <h1 class="hero-title">Work for Chinese</h1>
-    <p class="hero-sub">Chọn lĩnh vực để học tiếng Trung theo công việc</p>
+  <!-- Sticky Header -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="ChineseForWork Home">
+        ChineseForWork
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav__link" href="#industries">Industries</a>
+        <a class="nav__link" href="#learning-path">Learning Path</a>
+        <a class="nav__link" href="#sample-lessons">Sample Lessons</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary btn--sm" href="#free-access">Start Learning</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile" aria-hidden="true">
+      <div class="container mobile__inner">
+        <a class="mobile__link" href="#industries">Industries</a>
+        <a class="mobile__link" href="#learning-path">Learning Path</a>
+        <a class="mobile__link" href="#sample-lessons">Sample Lessons</a>
+        <a class="mobile__link" href="#faq">FAQ</a>
+        <a class="btn btn--primary" href="#free-access">Start Learning</a>
+      </div>
+    </div>
   </header>
 
-  <!-- TOPICS GRID -->
-  <main class="topics">
-    <a class="card" href="topics/ecommerce.html">
-      <img src="https://picsum.photos/600/380?1" alt="E-commerce">
-      <div class="pad">
-        <p class="title">电子商务 (E-commerce)</p>
-        <p class="sub">Bán hàng online · nền tảng · vận hành</p>
-      </div>
-    </a>
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="badge">Professional Chinese for Work</p>
+          <h1 class="hero__title">Learn Chinese for Your Career</h1>
+          <p class="hero__subtitle">
+            Industry-specific Chinese for working professionals
+          </p>
 
-    <a class="card" href="topics/logistics.html">
-      <img src="https://picsum.photos/600/380?2" alt="Logistics">
-      <div class="pad">
-        <p class="title">物流 (Logistics)</p>
-        <p class="sub">Kho · giao nhận · chuỗi cung ứng</p>
-      </div>
-    </a>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#industries">Choose Your Industry</a>
+            <a class="btn btn--secondary" href="#learning-path">View Learning Path</a>
+          </div>
 
-    <a class="card" href="topics/marketing.html">
-      <img src="https://picsum.photos/600/380?3" alt="Marketing">
-      <div class="pad">
-        <p class="title">市场营销 (Marketing)</p>
-        <p class="sub">Chiến dịch · nội dung · tăng trưởng</p>
-      </div>
-    </a>
+          <div class="hero__meta">
+            <div class="meta__item">
+              <div class="meta__label">Focus</div>
+              <div class="meta__value">Vocabulary + Dialogues</div>
+            </div>
+            <div class="meta__item">
+              <div class="meta__label">Format</div>
+              <div class="meta__value">Daily lessons (Day 1 → Day N)</div>
+            </div>
+            <div class="meta__item">
+              <div class="meta__label">Style</div>
+              <div class="meta__value">Serious, career-oriented</div>
+            </div>
+          </div>
+        </div>
 
-    <a class="card" href="topics/customer-service.html">
-      <img src="https://picsum.photos/600/380?4" alt="Customer Service">
-      <div class="pad">
-        <p class="title">客户服务 (Customer Service)</p>
-        <p class="sub">CSKH · khiếu nại · kịch bản</p>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="visual-card">
+            <div class="visual-card__top">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <div class="visual-card__body">
+              <div class="skeleton skeleton--h1"></div>
+              <div class="skeleton skeleton--p"></div>
+              <div class="skeleton skeleton--p short"></div>
+              <div class="skeleton skeleton--btn"></div>
+              <div class="map-mini">
+                <div class="node unlocked">Day 1</div>
+                <div class="node unlocked">Day 2</div>
+                <div class="node locked">Day 3</div>
+                <div class="node locked">Day 4</div>
+              </div>
+            </div>
+          </div>
+          <div class="visual-accent"></div>
+        </div>
       </div>
-    </a>
+    </section>
 
-    <a class="card" href="topics/finance.html">
-      <img src="https://picsum.photos/600/380?5" alt="Finance">
-      <div class="pad">
-        <p class="title">金融 (Finance)</p>
-        <p class="sub">Báo cáo · dòng tiền · chỉ số</p>
-      </div>
-    </a>
+    <!-- Industries -->
+    <section id="industries" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Choose Your Industry</h2>
+          <p class="section__subtitle">
+            Select the field that matches your career and start learning relevant workplace Chinese.
+          </p>
+        </div>
 
-    <a class="card" href="topics/hr.html">
-      <img src="https://picsum.photos/600/380?6" alt="HR">
-      <div class="pad">
-        <p class="title">人力资源 (HR)</p>
-        <p class="sub">Tuyển dụng · phỏng vấn · nhân sự</p>
+        <div class="grid">
+          <!-- Card template: click filters learning path -->
+          <button class="card" data-industry="ecommerce" type="button">
+            <div class="card__media media--ecommerce" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">电子商务</div>
+              <div class="card__en">E-commerce</div>
+              <p class="card__desc">Practical language for online trade, payments, and logistics.</p>
+            </div>
+          </button>
+
+          <button class="card" data-industry="logistics" type="button">
+            <div class="card__media media--logistics" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">物流</div>
+              <div class="card__en">Logistics</div>
+              <p class="card__desc">Speak confidently about shipping, inventory, and deliveries.</p>
+            </div>
+          </button>
+
+          <button class="card" data-industry="marketing" type="button">
+            <div class="card__media media--marketing" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">市场营销</div>
+              <div class="card__en">Marketing</div>
+              <p class="card__desc">Master campaigns, promotions, and customer outreach.</p>
+            </div>
+          </button>
+
+          <button class="card" data-industry="customer-service" type="button">
+            <div class="card__media media--cs" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">客户服务</div>
+              <div class="card__en">Customer Service</div>
+              <p class="card__desc">Handle requests, complaints, and professional follow-ups.</p>
+            </div>
+          </button>
+
+          <button class="card" data-industry="finance" type="button">
+            <div class="card__media media--finance" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">金融</div>
+              <div class="card__en">Finance</div>
+              <p class="card__desc">Discuss budgets, invoices, payments, and reporting clearly.</p>
+            </div>
+          </button>
+
+          <button class="card" data-industry="hr" type="button">
+            <div class="card__media media--hr" aria-hidden="true"></div>
+            <div class="card__content">
+              <div class="card__cn">人力资源</div>
+              <div class="card__en">Human Resources</div>
+              <p class="card__desc">Interviewing, onboarding, feedback, and policy conversations.</p>
+            </div>
+          </button>
+        </div>
       </div>
-    </a>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">How It Works</h2>
+          <p class="section__subtitle">A simple routine built for busy professionals.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__icon">1</div>
+            <div class="step__title">Choose an industry</div>
+            <p class="step__desc">Start with the vocabulary and dialogues that match your daily work.</p>
+          </div>
+          <div class="step">
+            <div class="step__icon">2</div>
+            <div class="step__title">Follow the daily map</div>
+            <p class="step__desc">Short lessons organized as Day 1 → Day N to keep momentum.</p>
+          </div>
+          <div class="step">
+            <div class="step__icon">3</div>
+            <div class="step__title">Learn vocabulary & dialogues</div>
+            <p class="step__desc">Industry terms plus realistic workplace conversations.</p>
+          </div>
+          <div class="step">
+            <div class="step__icon">4</div>
+            <div class="step__title">Practice workplace situations</div>
+            <p class="step__desc">Mini practice to apply what you learned immediately.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section id="learning-path" class="section">
+      <div class="container">
+        <div class="section__head row">
+          <div>
+            <h2 class="section__title">Learning Path</h2>
+            <p class="section__subtitle">A map-style path inspired by Duolingo — rebuilt for professional learning.</p>
+          </div>
+
+          <div class="filter">
+            <span class="filter__label">Industry:</span>
+            <select id="industrySelect" class="select" aria-label="Select an industry">
+              <option value="all">All</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="logistics">Logistics</option>
+              <option value="marketing">Marketing</option>
+              <option value="customer-service">Customer Service</option>
+              <option value="finance">Finance</option>
+              <option value="hr">Human Resources</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="path">
+          <div class="path__legend">
+            <span class="pill pill--unlocked">Unlocked</span>
+            <span class="pill pill--locked">Locked</span>
+            <span class="pill pill--current">Today</span>
+          </div>
+
+          <div class="path__grid" id="pathGrid">
+            <!-- Nodes are injected by JS -->
+          </div>
+
+          <div class="path__note">
+            Tip: Click an industry card above to filter this path.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample lesson -->
+    <section id="sample-lessons" class="section section--muted">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Sample Lesson Preview</h2>
+          <p class="section__subtitle">A realistic workplace scenario with vocabulary, dialogue, and practice.</p>
+        </div>
+
+        <div class="lesson">
+          <div class="lesson__left">
+            <div class="lesson__label">Situation</div>
+            <h3 class="lesson__title">Scheduling a delivery update</h3>
+            <p class="lesson__text">
+              Learn how to ask for a shipment status, confirm a delivery date, and respond professionally.
+            </p>
+
+            <div class="lesson__block">
+              <div class="lesson__label">Vocabulary</div>
+              <ul class="vocab">
+                <li><span class="vocab__cn">发货</span><span class="vocab__py">fā huò</span><span class="vocab__en">ship / dispatch</span></li>
+                <li><span class="vocab__cn">到货</span><span class="vocab__py">dào huò</span><span class="vocab__en">arrive / in stock</span></li>
+                <li><span class="vocab__cn">预计</span><span class="vocab__py">yù jì</span><span class="vocab__en">estimated</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="lesson__right">
+            <div class="lesson__block">
+              <div class="lesson__label">Dialogue</div>
+              <div class="dialogue">
+                <div class="line">
+                  <div class="speaker">You</div>
+                  <div class="text">请问这批货什么时候发货？</div>
+                  <div class="hint">When will this batch ship?</div>
+                </div>
+                <div class="line">
+                  <div class="speaker">Partner</div>
+                  <div class="text">预计明天发货，后天到货。</div>
+                  <div class="hint">Estimated to ship tomorrow, arrive the day after.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson__block">
+              <div class="lesson__label">Mini Practice</div>
+              <div class="practice">
+                <p class="practice__q">Fill in the missing word: “预计 ____ 发货”</p>
+                <div class="practice__opts">
+                  <button class="opt" type="button" data-correct="true">明天</button>
+                  <button class="opt" type="button">昨天</button>
+                  <button class="opt" type="button">现在</button>
+                </div>
+                <div class="practice__result" role="status" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Access -->
+    <section id="free-access" class="section">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__copy">
+            <h2 class="cta__title">Everything is free</h2>
+            <p class="cta__subtitle">
+              Get access to industry-specific lessons, workplace dialogues, and the daily learning map.
+            </p>
+            <ul class="cta__bullets">
+              <li>Industry vocabulary</li>
+              <li>Workplace conversations</li>
+              <li>Daily path (Day 1 → Day N)</li>
+            </ul>
+          </div>
+
+          <form class="form" id="leadForm">
+            <label class="field">
+              <span>Email (required)</span>
+              <input name="email" type="email" placeholder="you@company.com" required />
+            </label>
+
+            <label class="field">
+              <span>Phone (optional)</span>
+              <input name="phone" type="tel" placeholder="+84 ..." />
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">Get Free Access</button>
+            <p class="form__note">No spam. You can unsubscribe anytime.</p>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--muted">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">FAQ</h2>
+          <p class="section__subtitle">Common questions from busy professionals.</p>
+        </div>
+
+        <div class="accordion" id="accordion">
+          <details class="acc" open>
+            <summary>Is this course suitable for complete beginners?</summary>
+            <p>Yes. Lessons start from practical basics and build gradually with workplace context.</p>
+          </details>
+          <details class="acc">
+            <summary>How long is a daily lesson?</summary>
+            <p>Most lessons are designed to take 5–10 minutes, focused on real usage.</p>
+          </details>
+          <details class="acc">
+            <summary>Can I switch industries later?</summary>
+            <p>Yes. You can explore multiple industries and follow separate learning paths.</p>
+          </details>
+          <details class="acc">
+            <summary>Do you teach only vocabulary?</summary>
+            <p>No. Each day includes vocabulary, dialogues, and practice for workplace situations.</p>
+          </details>
+          <details class="acc">
+            <summary>Is everything really free?</summary>
+            <p>Yes. The platform is free during early access. We may add premium features later.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__brand">ChineseForWork</div>
+        <p class="footer__text">Industry-specific Chinese for working professionals.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <div class="footer__head">Industries</div>
+          <a href="#industries">E-commerce</a>
+          <a href="#industries">Logistics</a>
+          <a href="#industries">Marketing</a>
+          <a href="#industries">Customer Service</a>
+          <a href="#industries">Finance</a>
+          <a href="#industries">Human Resources</a>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__head">Resources</div>
+          <a href="#learning-path">Learning Path</a>
+          <a href="#sample-lessons">Sample Lesson</a>
+          <a href="#free-access">Free Access</a>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__head">Legal</div>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ChineseForWork. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
