@@ -320,22 +320,30 @@
               <li>Daily path (Day 1 → Day N)</li>
             </ul>
           </div>
+<form class="form" id="leadForm"
+      action="https://formspree.io/f/xgokydrk"
+      method="POST">
 
-          <form class="form" id="leadForm">
-            <label class="field">
-              <span>Email (required)</span>
-              <input name="email" type="email" placeholder="you@company.com" required />
-            </label>
+  <input type="hidden" name="_subject" value="New lead — ChineseForWork" />
 
-            <label class="field">
-              <span>Phone (optional)</span>
-              <input name="phone" type="tel" placeholder="+84 ..." />
-            </label>
+  <label class="field">
+    <span>Email (required)</span>
+    <input name="email" type="email" placeholder="you@company.com" required />
+  </label>
 
-            <button class="btn btn--primary btn--block" type="submit">Get Free Access</button>
-            <p class="form__note">No spam. You can unsubscribe anytime.</p>
-            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
+  <label class="field">
+    <span>Phone (optional)</span>
+    <input name="phone" type="tel" placeholder="+84 ..." />
+  </label>
+
+  <button class="btn btn--primary btn--block" type="submit">
+    Get Free Access
+  </button>
+
+  <p class="form__note">No spam. You can unsubscribe anytime.</p>
+  <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+</form>
+
         </div>
       </div>
     </section>
