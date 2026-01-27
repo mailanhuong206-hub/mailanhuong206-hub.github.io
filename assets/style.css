@@ -142,13 +142,25 @@ button{font-family:inherit}
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:rgba(91,122,168,.35)}
-.card__media{height:120px}
-.media--ecommerce{background:linear-gradient(135deg, rgba(91,122,168,.28), rgba(26,43,74,.12))}
-.media--logistics{background:linear-gradient(135deg, rgba(26,43,74,.18), rgba(148,163,184,.25))}
-.media--marketing{background:linear-gradient(135deg, rgba(91,122,168,.22), rgba(59,130,246,.10))}
-.media--cs{background:linear-gradient(135deg, rgba(26,43,74,.12), rgba(2,132,199,.12))}
-.media--finance{background:linear-gradient(135deg, rgba(15,23,42,.12), rgba(91,122,168,.18))}
-.media--hr{background:linear-gradient(135deg, rgba(91,122,168,.18), rgba(148,163,184,.22))}
+.card__media {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: rgba(26,43,74,.75);
+  text-transform: uppercase;
+}
+
+.media--ecommerce { background: linear-gradient(135deg, #E8EEF6, #F5F7FB); }
+.media--logistics { background: linear-gradient(135deg, #E6ECF3, #F3F6FA); }
+.media--marketing { background: linear-gradient(135deg, #EAF0F7, #F6F9FC); }
+.media--cs        { background: linear-gradient(135deg, #E9EEF4, #F4F7FB); }
+.media--finance   { background: linear-gradient(135deg, #E7EDF4, #F5F8FC); }
+.media--hr        { background: linear-gradient(135deg, #EAF1F7, #F6F9FD); }
+
 .card__content{padding:18px 18px 20px}
 .card__cn{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
 .card__en{margin-top:6px;font-size:13px;font-weight:800;color:rgba(26,43,74,.75);text-transform:none}
