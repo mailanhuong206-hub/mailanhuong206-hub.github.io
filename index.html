@@ -11,8 +11,8 @@
   --border:#e8eaed;--border2:#d1d5db;
   --text:#111827;--muted:#6b7280;--muted2:#9ca3af;
   --red-v:#ef4444;--green-v:#10b981;
-  /* vibrant accents */
-  --indigo:#4f46e5;--indigo-l:#eef2ff;--indigo-m:#c7d2fe;
+  /* vibrant accents — RED theme */
+  --indigo:#dc2626;--indigo-l:#fef2f2;--indigo-m:#fecaca;
   --amber:#f59e0b;--amber-l:#fffbeb;--amber-m:#fde68a;
   --rose:#f43f5e;--rose-l:#fff1f2;--rose-m:#fecdd3;
   --teal:#0d9488;--teal-l:#f0fdfa;--teal-m:#99f6e4;
@@ -29,10 +29,10 @@ body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);line-heigh
 nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav-logo{font-size:1rem;font-weight:800;background:linear-gradient(135deg,var(--indigo),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer;letter-spacing:-.02em}
 .nav-links{display:flex;gap:.2rem;align-items:center}
-.nav-links a{font-size:.82rem;color:var(--muted);padding:.38rem .72rem;border-radius:var(--r-sm);cursor:pointer;border:none;background:none;font-family:'Inter',sans-serif;transition:color .15s,background .15s}
+.nav-links a{font-size:.82rem;color:var(--muted);padding:.38rem .72rem;border-radius:var(--r-sm);cursor:pointer;border:none;background:none;font-family:'Inter',sans-serif;transition:color .15s,background .15s;text-decoration:none}
 .nav-links a:hover{color:var(--text);background:var(--bg2)}
-.nav-cta{background:var(--indigo)!important;color:#fff!important;border-radius:999px!important;font-weight:700!important;padding:.38rem 1.1rem!important;box-shadow:0 2px 8px rgba(79,70,229,.35)!important;transition:box-shadow .2s,transform .15s!important}
-.nav-cta:hover{box-shadow:0 4px 16px rgba(79,70,229,.45)!important;transform:translateY(-1px)}
+.nav-cta{background:var(--indigo)!important;color:#fff!important;border-radius:999px!important;font-weight:700!important;padding:.38rem 1.1rem!important;box-shadow:0 2px 8px rgba(220,38,38,.35)!important;transition:box-shadow .2s,transform .15s!important}
+.nav-cta:hover{box-shadow:0 4px 16px rgba(220,38,38,.45)!important;transform:translateY(-1px)}
 
 /* ── PAGES ───────────────────────── */
 .page{display:none}.page.active{display:block}
@@ -56,14 +56,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.9);backdrop-f
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .4s ease both}
 
 /* ── STATS STRIP ─────────────────── */
-.stats-strip{background:linear-gradient(135deg,var(--indigo) 0%,#7c3aed 50%,var(--teal) 100%);padding:2.5rem 2rem}
+.stats-strip{background:linear-gradient(135deg,var(--indigo) 0%,#b91c1c 50%,var(--teal) 100%);padding:2.5rem 2rem}
 .stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;text-align:center}
 .stat-item .val{font-size:2rem;font-weight:800;color:#fff;line-height:1}
 .stat-item .lbl{font-size:.78rem;color:rgba(255,255,255,.75);margin-top:.25rem}
 
 /* ── BUTTONS ─────────────────────── */
-.btn-p{background:var(--indigo);color:#fff;border:none;padding:.72rem 1.65rem;border-radius:999px;font-weight:700;font-size:.88rem;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 3px 12px rgba(79,70,229,.4);transition:all .2s}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,70,229,.5)}
+.btn-p{background:var(--indigo);color:#fff;border:none;padding:.72rem 1.65rem;border-radius:999px;font-weight:700;font-size:.88rem;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 3px 12px rgba(220,38,38,.4);transition:all .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(220,38,38,.5)}
 .btn-o{background:#fff;color:var(--text);border:1.5px solid var(--border2);padding:.72rem 1.65rem;border-radius:999px;font-weight:600;font-size:.88rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;box-shadow:var(--s1)}
 .btn-o:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-1px)}
 
@@ -87,7 +87,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .ind-zh{font-size:1.9rem;margin-bottom:.25rem;position:relative;z-index:1}
 .ind-card h3{font-size:1rem;font-weight:700;margin-bottom:.35rem;position:relative;z-index:1}
 .ind-card p{font-size:.82rem;color:var(--muted);line-height:1.5;position:relative;z-index:1}
-.open-b{position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,var(--indigo),var(--teal));color:#fff;font-size:.66rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;letter-spacing:.05em;box-shadow:0 2px 8px rgba(79,70,229,.35)}
+.open-b{position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,var(--indigo),var(--teal));color:#fff;font-size:.66rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;letter-spacing:.05em;box-shadow:0 2px 8px rgba(220,38,38,.35)}
 .lock-i{position:absolute;top:1rem;right:1rem;font-size:.85rem;color:#d1d5db}
 
 /* ── HOW IT WORKS ────────────────── */
@@ -103,7 +103,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .filter-tabs{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .tab-btn{padding:.32rem .85rem;border-radius:999px;border:1.5px solid var(--border2);background:#fff;color:var(--muted);font-size:.78rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
 .tab-btn:hover{border-color:var(--indigo);color:var(--indigo)}
-.tab-btn.active{background:var(--indigo);color:#fff;border-color:var(--indigo);font-weight:700;box-shadow:0 2px 8px rgba(79,70,229,.3)}
+.tab-btn.active{background:var(--indigo);color:#fff;border-color:var(--indigo);font-weight:700;box-shadow:0 2px 8px rgba(220,38,38,.3)}
 
 /* ── CALENDAR ────────────────────── */
 .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;flex-wrap:wrap;gap:.5rem}
@@ -119,8 +119,8 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .cal-cell{aspect-ratio:1;border-radius:10px;border:1.5px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;gap:2px;transition:all .2s}
 .cal-cell.empty{border-color:transparent;background:transparent}
 .cal-cell.locked{background:var(--bg2)}
-.cal-cell.open{border-color:var(--indigo);background:linear-gradient(135deg,var(--indigo-l),rgba(13,148,136,.06));box-shadow:0 2px 8px rgba(79,70,229,.2);cursor:pointer}
-.cal-cell.open:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(79,70,229,.3)}
+.cal-cell.open{border-color:var(--indigo);background:linear-gradient(135deg,var(--indigo-l),rgba(13,148,136,.06));box-shadow:0 2px 8px rgba(220,38,38,.2);cursor:pointer}
+.cal-cell.open:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(220,38,38,.3)}
 .cal-num{font-size:.78rem;line-height:1;color:var(--muted2)}
 .cal-cell.open .cal-num{font-weight:800;color:var(--indigo)}
 .cal-cell.locked .cal-num{color:#d1d5db}
@@ -131,7 +131,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 
 /* ── SAMPLE LESSON ───────────────── */
 .lesson-box{background:#fff;border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--s2)}
-.lb-header{background:linear-gradient(135deg,var(--indigo) 0%,#7c3aed 50%,var(--teal) 100%);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.lb-header{background:linear-gradient(135deg,var(--indigo) 0%,#b91c1c 50%,var(--teal) 100%);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .lb-header h3{font-size:.97rem;font-weight:700;color:#fff}
 .lb-header p{font-size:.78rem;color:rgba(255,255,255,.75)}
 .lb-body{padding:1.5rem}
@@ -155,7 +155,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .msg.l{align-self:flex-start;align-items:flex-start}
 .msg-who{font-size:.68rem;color:var(--muted);font-weight:600}
 .msg-bbl{padding:.6rem 1rem;border-radius:14px;font-size:.87rem;line-height:1.55}
-.msg.r .msg-bbl{background:linear-gradient(135deg,var(--indigo),#7c3aed);color:#fff;border-bottom-right-radius:3px}
+.msg.r .msg-bbl{background:linear-gradient(135deg,var(--indigo),#b91c1c);color:#fff;border-bottom-right-radius:3px}
 .msg.l .msg-bbl{background:var(--bg2);border:1.5px solid var(--border);border-bottom-left-radius:3px}
 .msg-en{font-size:.71rem;color:var(--muted)}
 
@@ -176,7 +176,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .prog-pct{font-size:.73rem;color:var(--muted);white-space:nowrap;font-weight:600}
 
 /* ── GAMIFICATION ────────────────── */
-.xp-bar-wrap{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:var(--r);padding:1.1rem 1.4rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.xp-bar-wrap{background:linear-gradient(135deg,#450a0a,#7f1d1d);border-radius:var(--r);padding:1.1rem 1.4rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
 .xp-avatar{width:44px;height:44px;background:linear-gradient(135deg,var(--amber),var(--rose));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;box-shadow:0 2px 8px rgba(245,158,11,.4)}
 .xp-info{flex:1;min-width:120px}
 .xp-label{font-size:.72rem;color:rgba(255,255,255,.65);margin-bottom:.3rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
@@ -197,7 +197,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 @keyframes fall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
 /* ── SIGNUP ──────────────────────── */
-.signup-box{background:linear-gradient(135deg,#f5f3ff,#eff6ff,#f0fdfa);border:1.5px solid var(--indigo-m);border-radius:var(--r-lg);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
+.signup-box{background:linear-gradient(135deg,#fef2f2,#eff6ff,#f0fdfa);border:1.5px solid var(--indigo-m);border-radius:var(--r-lg);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
 .signup-box::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:linear-gradient(135deg,var(--indigo),var(--teal));border-radius:50%;opacity:.07;pointer-events:none}
 .signup-box h2{font-size:1.75rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.025em}
 .signup-box>p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
@@ -229,7 +229,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .foot-bottom{text-align:center;padding:1.25rem 2rem;color:var(--muted2);font-size:.76rem;border-top:1px solid var(--border)}
 
 /* ── LESSONS PAGE ────────────────── */
-.lp-header{background:linear-gradient(135deg,var(--indigo) 0%,#7c3aed 50%,var(--teal) 100%);padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
+.lp-header{background:linear-gradient(135deg,var(--indigo) 0%,#b91c1c 50%,var(--teal) 100%);padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
 .back-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.38rem .85rem;border-radius:var(--r-sm);cursor:pointer;font-size:.8rem;font-family:'Inter',sans-serif;flex-shrink:0;transition:all .15s;margin-top:.1rem;backdrop-filter:blur(4px)}
 .back-btn:hover{background:rgba(255,255,255,.25)}
 .lp-main{max-width:780px;margin:2rem auto;padding:0 1.5rem 4rem}
@@ -240,8 +240,8 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 .mcal-cell{aspect-ratio:1;border-radius:7px;border:1.5px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#fff;transition:all .2s}
 .mcal-cell.empty{border-color:transparent;background:transparent}
 .mcal-cell.locked{background:var(--bg2)}
-.mcal-cell.open{border-color:var(--indigo);background:var(--indigo-l);box-shadow:0 1px 6px rgba(79,70,229,.2);cursor:pointer}
-.mcal-cell.open:hover{transform:scale(1.1);box-shadow:0 3px 12px rgba(79,70,229,.3)}
+.mcal-cell.open{border-color:var(--indigo);background:var(--indigo-l);box-shadow:0 1px 6px rgba(220,38,38,.2);cursor:pointer}
+.mcal-cell.open:hover{transform:scale(1.1);box-shadow:0 3px 12px rgba(220,38,38,.3)}
 .mcal-num{font-size:.72rem;line-height:1;color:#d1d5db}
 .mcal-cell.open .mcal-num{font-weight:800;color:var(--indigo)}
 .mcal-zh{font-size:.6rem;color:var(--teal);display:none;font-weight:600}
@@ -275,7 +275,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
   <span class="nav-logo" onclick="showPage('home')">ChineseForWork</span>
   <div class="nav-links">
     <a onclick="nav2('industries')">Industries</a>
-    <a onclick="nav2('learning-path')">Learning Path</a>
+    <a href="/lesson/">Bắt đầu học</a>
     <a onclick="nav2('sample-lessons')">Sample Lessons</a>
     <a onclick="nav2('faq')">FAQ</a>
     <a class="nav-cta" onclick="showPage('lessons')">Start Learning</a>
@@ -303,7 +303,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
     </div>
     <div class="hero-btns">
       <button class="btn-p" onclick="showPage('lessons')">Start E-commerce Track</button>
-      <button class="btn-o" onclick="nav2('learning-path')">View Learning Path</button>
+      <button class="btn-o" onclick="window.location.href='/lesson/'">Bắt đầu học</button>
     </div>
   </div>
 
@@ -348,32 +348,6 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
       <div class="step-card reveal"><div class="step-num">3</div><h4>Learn vocab &amp; dialogues</h4><p>Industry terms plus realistic workplace conversations.</p></div>
       <div class="step-card reveal"><div class="step-num">4</div><h4>Practice &amp; earn XP</h4><p>Mini quiz to apply what you learned — collect XP as you go.</p></div>
     </div>
-  </section>
-
-  <!-- LEARNING PATH — CALENDAR -->
-  <section id="learning-path">
-    <span class="stag">Learning Path</span>
-    <h2 class="sec">A map-style path inspired by Duolingo — rebuilt for professional learning.</h2>
-    <div class="filter-tabs">
-      <button class="tab-btn active">All</button>
-      <button class="tab-btn" style="color:var(--indigo);border-color:var(--indigo-m)">E-commerce</button>
-      <button class="tab-btn" onclick="alert('Coming soon.')">Logistics</button>
-      <button class="tab-btn" onclick="alert('Coming soon.')">Marketing</button>
-      <button class="tab-btn" onclick="alert('Coming soon.')">Customer Service</button>
-      <button class="tab-btn" onclick="alert('Coming soon.')">Finance</button>
-      <button class="tab-btn" onclick="alert('Coming soon.')">Human Resources</button>
-    </div>
-    <p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Tip: Click an industry card above to filter this path.</p>
-    <div class="cal-header">
-      <div class="cal-title">Month 1 · E-commerce · 30 Days</div>
-      <div class="cal-legend">
-        <div class="cal-leg-item"><div class="cal-dot open"></div>Unlocked</div>
-        <div class="cal-leg-item"><div class="cal-dot locked"></div>Locked</div>
-        <div class="cal-leg-item">Today</div>
-      </div>
-    </div>
-    <div class="cal-grid" id="home-cal"></div>
-    <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem">Click Day 1 to begin. New days unlock as you complete each lesson.</p>
   </section>
 
   <!-- SAMPLE LESSON PREVIEW -->
@@ -445,7 +419,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
   <div class="foot-wrap">
     <div class="foot-brand"><div class="foot-logo">ChineseForWork</div><p>Industry-specific Chinese for working professionals.</p></div>
     <div class="foot-col"><h5>Industries</h5><a onclick="showPage('lessons')">E-commerce</a><a>Logistics</a><a>Marketing</a><a>Customer Service</a><a>Finance</a><a>Human Resources</a></div>
-    <div class="foot-col"><h5>Resources</h5><a onclick="showPage('lessons')">Learning Path</a><a onclick="nav2('sample-lessons')">Sample Lesson</a><a onclick="nav2('free-access')">Free Access</a></div>
+    <div class="foot-col"><h5>Resources</h5><a href="/lesson/">Bắt đầu học</a><a onclick="nav2('sample-lessons')">Sample Lesson</a><a onclick="nav2('free-access')">Free Access</a></div>
     <div class="foot-col"><h5>Legal</h5><a>Privacy</a><a>Terms</a><a>Contact</a></div>
   </div>
   <div class="foot-bottom">© 2025 ChineseForWork. All rights reserved.</div>
@@ -492,7 +466,7 @@ h2.sec{font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;margin-bottom:.6rem;
 
     <!-- DAY 1 LESSON -->
     <div class="lesson-box pop-in">
-      <div style="background:linear-gradient(135deg,var(--indigo),#7c3aed,var(--teal));padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.7rem">
+      <div style="background:linear-gradient(135deg,var(--indigo),#b91c1c,var(--teal));padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.7rem">
         <div>
           <div style="font-size:.67rem;color:rgba(255,255,255,.65);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.12rem">E-COMMERCE · DAY 1</div>
           <div style="font-size:1rem;font-weight:800;color:#fff">Ordering &amp; Delivery · 下单与配送</div>
@@ -611,27 +585,6 @@ function nav2(id){
   setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})},50);
 }
 
-// ── build HOME calendar ──────────────────────────────
-(()=>{
-  const g=document.getElementById('home-cal');
-  ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(d=>{
-    const el=document.createElement('div');el.className='cal-dlabel';el.textContent=d;g.appendChild(el);
-  });
-  for(let i=1;i<=30;i++){
-    const el=document.createElement('div');
-    if(i===1){
-      el.className='cal-cell open';
-      el.innerHTML='<div class="cal-num">1</div><div class="cal-topic">Order &amp;<br>Delivery</div><div class="cal-lock-icon">🔓</div>';
-      el.onclick=()=>showPage('lessons');
-    } else {
-      el.className='cal-cell locked';
-      el.innerHTML=`<div class="cal-num">${i}</div><div class="cal-lock-icon">🔒</div>`;
-    }
-    g.appendChild(el);
-  }
-  for(let i=0;i<5;i++){const el=document.createElement('div');el.className='cal-cell empty';g.appendChild(el);}
-})();
-
 // ── build LESSONS mini calendar ──────────────────────
 (()=>{
   const g=document.getElementById('mcal');
@@ -646,7 +599,7 @@ function nav2(id){
       el.onclick=()=>document.querySelector('.lesson-box').scrollIntoView({behavior:'smooth'});
     } else {
       el.className='mcal-cell locked';
-      el.innerHTML=`<div class="mcal-num">${i}</div><div class="mcal-lock">🔒</div>`;
+      el.innerHTML='<div class="mcal-num">'+i+'</div><div class="mcal-lock">🔒</div>';
     }
     g.appendChild(el);
   }
@@ -710,11 +663,11 @@ function fc(card){
 
 // ── confetti ──────────────────────────────────────────
 function confetti(){
-  const colors=['#4f46e5','#0d9488','#f59e0b','#f43f5e','#10b981','#7c3aed'];
+  const colors=['#dc2626','#0d9488','#f59e0b','#f43f5e','#10b981','#b91c1c'];
   for(let i=0;i<28;i++){
     const el=document.createElement('div');
     el.className='confetti-piece';
-    el.style.cssText=`left:${Math.random()*100}vw;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*.6}s;animation-duration:${.8+Math.random()*.6}s;transform:rotate(${Math.random()*360}deg)`;
+    el.style.cssText='left:'+Math.random()*100+'vw;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+Math.random()*.6+'s;animation-duration:'+(0.8+Math.random()*.6)+'s;transform:rotate('+Math.random()*360+'deg)';
     document.body.appendChild(el);
     setTimeout(()=>el.remove(),1600);
   }
@@ -741,7 +694,6 @@ function dq(btn,ok,qid){
     r.style.color='#991b1b';
   }
   qDoneCount++;
-  // reveal next question with delay
   if(qid==='d1q1') setTimeout(()=>{document.getElementById('q2-wrap').style.display='block';document.getElementById('q2-wrap').scrollIntoView({behavior:'smooth',block:'nearest'})},600);
   if(qid==='d1q2') setTimeout(()=>{document.getElementById('q3-wrap').style.display='block';document.getElementById('q3-wrap').scrollIntoView({behavior:'smooth',block:'nearest'})},600);
   if(qid==='d1q3'){
