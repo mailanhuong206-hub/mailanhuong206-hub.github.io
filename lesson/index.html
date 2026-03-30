@@ -128,10 +128,7 @@
       flex-shrink: 0;
     }
     .stat { text-align: center; }
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
+    .stat-value { font-size: 1.5rem; font-weight: 700; }
     .stat-label {
       font-size: .65rem;
       font-weight: 600;
@@ -201,10 +198,11 @@
       position: relative;
       transition: transform .15s, box-shadow .15s;
       text-decoration: none;
+      border: 2px solid transparent;
     }
     .day-cell.unlocked {
       background: #fff;
-      border: 2px solid #6366f1;
+      border-color: #6366f1;
       color: #1e293b;
       cursor: pointer;
     }
@@ -220,7 +218,7 @@
     }
     .day-cell.completed {
       background: #6366f1;
-      border: 2px solid #6366f1;
+      border-color: #6366f1;
       color: #fff;
       cursor: pointer;
     }
@@ -236,44 +234,151 @@
     }
     .day-cell.locked {
       background: #f1f5f9;
-      border: 2px solid transparent;
       color: #cbd5e1;
       cursor: not-allowed;
     }
-    .day-cell.locked .lock-icon {
+    .day-cell .lock-icon {
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .day-cell .lock-icon svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ───── Lesson Panel (slides in from right) ───── */
+    .lesson-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s, visibility .3s;
+    }
+    .lesson-overlay.active { opacity: 1; visibility: visible; }
+
+    .lesson-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: 520px;
+      max-width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+      overflow-y: auto;
+      box-shadow: -4px 0 30px rgba(0,0,0,.15);
+    }
+    .lesson-panel.active { transform: translateX(0); }
+
+    .lp-header {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      color: #fff;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .lp-header h2 { font-size: 1.1rem; margin: 0; }
+    .lp-header .lp-day { font-size: .8rem; opacity: .8; }
+    .lp-close {
+      background: rgba(255,255,255,.2);
+      border: none;
+      color: #fff;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lp-close:hover { background: rgba(255,255,255,.35); }
+
+    .lp-body { padding: 1.5rem; }
+
+    .lp-section { margin-bottom: 1.75rem; }
+    .lp-section-title {
       font-size: .7rem;
-      margin-top: 2px;
-      color: #f59e0b;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #6366f1;
+      margin-bottom: .65rem;
+      padding-bottom: .35rem;
+      border-bottom: 2px solid #e0e7ff;
     }
-    .day-cell.today {
-      border-color: #10b981;
-      box-shadow: 0 0 0 3px rgba(16,185,129,.2);
+
+    /* Vocab table */
+    .vocab-table { width: 100%; border-collapse: collapse; }
+    .vocab-table tr { border-bottom: 1px solid #f1f5f9; }
+    .vocab-table td { padding: .55rem .4rem; vertical-align: middle; }
+    .vocab-table .v-cn { font-size: 1.15rem; font-weight: 700; color: #1e293b; }
+    .vocab-table .v-py { font-size: .8rem; color: #6366f1; font-style: italic; }
+    .vocab-table .v-en { font-size: .85rem; color: #64748b; }
+
+    /* Dialogue */
+    .dialogue-line { display: flex; gap: .75rem; margin-bottom: .85rem; }
+    .dl-speaker {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; font-weight: 700; color: #fff;
     }
+    .dl-speaker.you { background: #6366f1; }
+    .dl-speaker.partner { background: #0f766e; }
+    .dl-bubble { background: #f8fafc; border-radius: 10px; padding: .6rem .85rem; flex: 1; }
+    .dl-cn { font-size: 1rem; font-weight: 600; color: #1e293b; margin-bottom: .15rem; }
+    .dl-hint { font-size: .8rem; color: #94a3b8; font-style: italic; }
+
+    /* Practice */
+    .practice-q { font-size: .95rem; font-weight: 600; color: #1e293b; margin-bottom: .85rem; line-height: 1.5; }
+    .practice-opts { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .practice-opt {
+      padding: .5rem 1.1rem; border-radius: 8px; border: 2px solid #e2e8f0;
+      background: #fff; font-size: .9rem; font-weight: 600;
+      cursor: pointer; transition: all .2s; color: #334155;
+    }
+    .practice-opt:hover { border-color: #6366f1; color: #6366f1; }
+    .practice-opt.correct { border-color: #10b981; background: #ecfdf5; color: #059669; pointer-events: none; }
+    .practice-opt.wrong { border-color: #ef4444; background: #fef2f2; color: #dc2626; pointer-events: none; opacity: .6; }
+    .practice-result { margin-top: .75rem; font-size: .9rem; font-weight: 600; min-height: 1.4em; }
+    .practice-result.success { color: #059669; }
+    .practice-result.fail { color: #dc2626; }
 
     /* ───── Responsive ───── */
     @media (max-width: 640px) {
       .progress-card {
-        flex-direction: column;
-        text-align: center;
-        margin: -1.5rem 1rem 1.5rem;
-        padding: 1rem;
+        flex-direction: column; text-align: center;
+        margin: -1.5rem 1rem 1.5rem; padding: 1rem;
       }
       .progress-stats { justify-content: center; }
       .cal-grid { gap: 4px; }
       .day-cell { font-size: .8rem; border-radius: 8px; }
+      .day-cell .lock-icon svg { width: 11px; height: 11px; }
       .lesson-hero h1 { font-size: 1.35rem; }
+      .lesson-panel { width: 100%; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════ Header (same as main site) ═══════ -->
+<!-- ═══════ Header ═══════ -->
 <header class="header" role="banner">
   <div class="container header__inner">
     <a class="brand" href="/" aria-label="ChineseForWork Home">ChineseForWork</a>
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav__link" href="/#industries">Industries</a>
-      <a class="nav__link" href="/#learning-path">Learning Path</a>
+      <a class="nav__link" href="/lesson/">Learning Path</a>
       <a class="nav__link" href="/#sample-lessons">Sample Lessons</a>
       <a class="nav__link" href="/#faq">FAQ</a>
     </nav>
@@ -342,12 +447,23 @@
       <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
     </div>
 
-    <div class="cal-grid" id="calGrid">
-      <!-- Injected by JS -->
-    </div>
+    <div class="cal-grid" id="calGrid"></div>
   </section>
 
 </main>
+
+<!-- ═══════ Lesson Slide Panel ═══════ -->
+<div class="lesson-overlay" id="lessonOverlay"></div>
+<div class="lesson-panel" id="lessonPanel">
+  <div class="lp-header">
+    <div>
+      <h2 id="lpTitle">Day 1</h2>
+      <div class="lp-day" id="lpSub">E-Commerce Track</div>
+    </div>
+    <button class="lp-close" id="lpClose" aria-label="Close lesson">&times;</button>
+  </div>
+  <div class="lp-body" id="lpBody"></div>
+</div>
 
 <!-- ═══════ Footer ═══════ -->
 <footer class="footer">
@@ -358,69 +474,182 @@
     </div>
   </div>
   <div class="container footer__bottom">
-    <span>© <span id="year"></span> ChineseForWork. All rights reserved.</span>
+    <span>&copy; <span id="year"></span> ChineseForWork. All rights reserved.</span>
   </div>
 </footer>
 
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Lesson data for Month 1 (30 days)
-  const lessons = [
-    { day: 1,  topic: '下单', en: 'Place an order' },
-    { day: 2,  topic: '付款', en: 'Payment' },
-    { day: 3,  topic: '发货', en: 'Ship goods' },
-    { day: 4,  topic: '物流', en: 'Logistics' },
-    { day: 5,  topic: '退货', en: 'Return goods' },
-    { day: 6,  topic: '客服', en: 'Customer service' },
-    { day: 7,  topic: '评价', en: 'Review' },
-    { day: 8,  topic: '库存', en: 'Inventory' },
-    { day: 9,  topic: '优惠', en: 'Discount' },
-    { day: 10, topic: '促销', en: 'Promotion' },
-    { day: 11, topic: '供应商', en: 'Supplier' },
-    { day: 12, topic: '批发', en: 'Wholesale' },
-    { day: 13, topic: '零售', en: 'Retail' },
-    { day: 14, topic: '运费', en: 'Shipping fee' },
-    { day: 15, topic: '签收', en: 'Sign for delivery' },
-    { day: 16, topic: '售后', en: 'After-sales' },
-    { day: 17, topic: '订单', en: 'Order' },
-    { day: 18, topic: '结算', en: 'Settlement' },
-    { day: 19, topic: '佣金', en: 'Commission' },
-    { day: 20, topic: '上架', en: 'List a product' },
-    { day: 21, topic: '下架', en: 'Delist' },
-    { day: 22, topic: '爆款', en: 'Best-seller' },
-    { day: 23, topic: '选品', en: 'Product selection' },
-    { day: 24, topic: '直播', en: 'Livestream' },
-    { day: 25, topic: '粉丝', en: 'Followers' },
-    { day: 26, topic: '转化率', en: 'Conversion rate' },
-    { day: 27, topic: '流量', en: 'Traffic' },
-    { day: 28, topic: '复购', en: 'Repeat purchase' },
-    { day: 29, topic: '品牌', en: 'Brand' },
-    { day: 30, topic: '复盘', en: 'Review / recap' },
-  ];
+/* ─── SVG lock icon (blue padlock) ─── */
+const LOCK_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="18" height="11" rx="2" fill="#3b82f6"/><path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.5" fill="#fff"/></svg>';
 
-  // For now, only Day 1 is unlocked
-  const unlockedUpTo = 1;
-
-  const grid = document.getElementById('calGrid');
-
-  lessons.forEach(({ day, topic }) => {
-    const cell = document.createElement('a');
-    cell.classList.add('day-cell');
-
-    if (day <= unlockedUpTo) {
-      cell.classList.add('unlocked');
-      // Link to future individual lesson page, e.g. /lesson/day/1/
-      cell.href = '#';
-      cell.innerHTML = `<span>${day}</span><span class="day-topic">${topic}</span>`;
-    } else {
-      cell.classList.add('locked');
-      cell.innerHTML = `<span>${day}</span><span class="lock-icon">🔒</span>`;
+/* ─── Lesson content database ─── */
+const lessonData = {
+  1: {
+    title: 'Day 1 · 下单 (Place an order)',
+    vocab: [
+      { cn: '下单', py: 'xià dān', en: 'place an order' },
+      { cn: '订单', py: 'dìng dān', en: 'order' },
+      { cn: '商品', py: 'shāng pǐn', en: 'product / goods' },
+      { cn: '数量', py: 'shù liàng', en: 'quantity' },
+      { cn: '确认', py: 'què rèn', en: 'confirm' },
+      { cn: '地址', py: 'dì zhǐ', en: 'address' },
+      { cn: '收货人', py: 'shōu huò rén', en: 'recipient' },
+      { cn: '提交', py: 'tí jiāo', en: 'submit' },
+      { cn: '加入购物车', py: 'jiā rù gòu wù chē', en: 'add to cart' },
+      { cn: '立即购买', py: 'lì jí gòu mǎi', en: 'buy now' },
+    ],
+    dialogue: [
+      { speaker: 'you', cn: '你好，我想下单买这个商品。', hint: "Hi, I'd like to place an order for this product." },
+      { speaker: 'partner', cn: '好的，请确认一下数量和收货地址。', hint: 'Sure, please confirm the quantity and delivery address.' },
+      { speaker: 'you', cn: '数量是50件，地址我已经填好了。', hint: "Quantity is 50 pieces. I've already filled in the address." },
+      { speaker: 'partner', cn: '收到，订单已经提交了。', hint: 'Received. The order has been submitted.' },
+    ],
+    practice: {
+      question: 'Fill in: "我想 _____ 买这个商品。"',
+      options: [
+        { text: '下单', correct: true },
+        { text: '付款', correct: false },
+        { text: '退货', correct: false },
+      ]
     }
+  }
+};
 
-    grid.appendChild(cell);
+/* ─── Calendar lessons ─── */
+const lessons = [
+  { day: 1,  topic: '下单' },  { day: 2,  topic: '付款' },
+  { day: 3,  topic: '发货' },  { day: 4,  topic: '物流' },
+  { day: 5,  topic: '退货' },  { day: 6,  topic: '客服' },
+  { day: 7,  topic: '评价' },  { day: 8,  topic: '库存' },
+  { day: 9,  topic: '优惠' },  { day: 10, topic: '促销' },
+  { day: 11, topic: '供应商' }, { day: 12, topic: '批发' },
+  { day: 13, topic: '零售' },  { day: 14, topic: '运费' },
+  { day: 15, topic: '签收' },  { day: 16, topic: '售后' },
+  { day: 17, topic: '订单' },  { day: 18, topic: '结算' },
+  { day: 19, topic: '佣金' },  { day: 20, topic: '上架' },
+  { day: 21, topic: '下架' },  { day: 22, topic: '爆款' },
+  { day: 23, topic: '选品' },  { day: 24, topic: '直播' },
+  { day: 25, topic: '粉丝' },  { day: 26, topic: '转化率' },
+  { day: 27, topic: '流量' },  { day: 28, topic: '复购' },
+  { day: 29, topic: '品牌' },  { day: 30, topic: '复盘' },
+];
+
+const unlockedUpTo = 1;
+const grid = document.getElementById('calGrid');
+
+lessons.forEach(function(item) {
+  const cell = document.createElement('div');
+  cell.classList.add('day-cell');
+
+  if (item.day <= unlockedUpTo) {
+    cell.classList.add('unlocked');
+    cell.innerHTML = '<span>' + item.day + '</span><span class="day-topic">' + item.topic + '</span>';
+    cell.addEventListener('click', function() { openLesson(item.day); });
+  } else {
+    cell.classList.add('locked');
+    cell.innerHTML = '<span>' + item.day + '</span><span class="lock-icon">' + LOCK_SVG + '</span>';
+  }
+
+  grid.appendChild(cell);
+});
+
+/* ─── Lesson Panel Logic ─── */
+const overlay = document.getElementById('lessonOverlay');
+const panel = document.getElementById('lessonPanel');
+const lpClose = document.getElementById('lpClose');
+const lpTitle = document.getElementById('lpTitle');
+const lpBody = document.getElementById('lpBody');
+
+function openLesson(day) {
+  const data = lessonData[day];
+  if (!data) {
+    alert('Lesson content coming soon!');
+    return;
+  }
+
+  lpTitle.textContent = data.title;
+
+  let html = '';
+
+  /* Vocabulary */
+  html += '<div class="lp-section">';
+  html += '<div class="lp-section-title">Vocabulary · 词汇</div>';
+  html += '<table class="vocab-table"><tbody>';
+  data.vocab.forEach(function(v) {
+    html += '<tr><td class="v-cn">' + v.cn + '</td><td class="v-py">' + v.py + '</td><td class="v-en">' + v.en + '</td></tr>';
   });
+  html += '</tbody></table></div>';
+
+  /* Dialogue */
+  html += '<div class="lp-section">';
+  html += '<div class="lp-section-title">Dialogue · 对话</div>';
+  data.dialogue.forEach(function(d) {
+    var label = d.speaker === 'you' ? 'You' : 'B';
+    html += '<div class="dialogue-line">';
+    html += '<div class="dl-speaker ' + d.speaker + '">' + label + '</div>';
+    html += '<div class="dl-bubble"><div class="dl-cn">' + d.cn + '</div><div class="dl-hint">' + d.hint + '</div></div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  /* Practice */
+  var p = data.practice;
+  html += '<div class="lp-section">';
+  html += '<div class="lp-section-title">Practice · 练习</div>';
+  html += '<p class="practice-q">' + p.question + '</p>';
+  html += '<div class="practice-opts" id="practiceOpts">';
+  p.options.forEach(function(opt, i) {
+    html += '<button class="practice-opt" data-correct="' + opt.correct + '" data-idx="' + i + '">' + opt.text + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="practice-result" id="practiceResult"></div>';
+  html += '</div>';
+
+  lpBody.innerHTML = html;
+
+  /* Practice click handlers */
+  document.querySelectorAll('#practiceOpts .practice-opt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var isCorrect = this.getAttribute('data-correct') === 'true';
+      var result = document.getElementById('practiceResult');
+
+      document.querySelectorAll('#practiceOpts .practice-opt').forEach(function(b) {
+        if (b.getAttribute('data-correct') === 'true') {
+          b.classList.add('correct');
+        } else {
+          b.classList.add('wrong');
+        }
+      });
+
+      if (isCorrect) {
+        result.textContent = '✅ Correct! 很好！';
+        result.className = 'practice-result success';
+      } else {
+        result.textContent = '❌ Not quite — the answer is highlighted in green.';
+        result.className = 'practice-result fail';
+      }
+    });
+  });
+
+  /* Open panel */
+  panel.classList.add('active');
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLesson() {
+  panel.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+lpClose.addEventListener('click', closeLesson);
+overlay.addEventListener('click', closeLesson);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLesson();
+});
 </script>
 
 </body>
